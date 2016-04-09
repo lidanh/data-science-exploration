@@ -2,13 +2,13 @@ setwd("~/Projects/bgu/funnel_analysis")
 
 # Download dataset
 datasetFile <- "funnel_data.csv"
-# datasetUrl <- "TODO"
+datasetUrl <- "https://raw.githubusercontent.com/lidanh/data-science-exploration/master/funnel_data.csv"
 
 if (file.exists(datasetFile)) {
   file.remove(datasetFile)
 }
 
-# download.file(datasetUrl, destfile = datasetFile, method = "curl")
+download.file(datasetUrl, destfile = datasetFile, method = "curl")
 
 # === Load Dataset ===
 funnel <- read.csv(datasetFile)
