@@ -17,7 +17,7 @@ funnel <- read.csv(datasetFile)
 summary(funnel)
 head(funnel)
 
-# === Graphs ===
+# === Plots ===
 library(ggplot2)
 library(reshape2)
 
@@ -42,17 +42,17 @@ visualize_funnel <- function(title, steps) {
     geom_smooth() +
     geom_line() +
     ylab(label="Total") + 
-    xlab("Date") +
+    xlab("Time") +
     ggtitle(title) +
     theme(
       axis.text.x=element_blank(), 
       plot.title = element_text(size=24, face="bold"))
 }
 
-# User end: new + sent
+# Users funnel: new + sent
 visualize_funnel("Users Funnel", list(New = funnel$new_items, Sent = funnel$total_sent))
 
-# User of user end: start pay + finish pay
+# UoU funnel: start pay + finish pay
 visualize_funnel("Users of Users Funnel", list(Start_Payment = funnel$payment_started, Finish_Payment = funnel$payment_finished))
 
 
@@ -60,6 +60,7 @@ visualize_funnel("Users of Users Funnel", list(Start_Payment = funnel$payment_st
 # 3. Funnel Steps Correlations
 library(corrplot)
 M <- cor(subset(funnel, select = c("new_items", "total_sent", "payment_started", "payment_finished", "paid_offline")))
+# visualize this matrix using corrplot library
 corrplot(M, method = "ellipse")
 
 
@@ -78,15 +79,20 @@ ggplot(funnel, aes(x = new_items, y = total_sent, group = 1)) +
 
 # 5. Histogram of starting payment by hour
 avg_by_hour <- function(title, steps) {
+  # aggregate the events by hour (function is avg)
   avg_by_hour_value <- aggregate(steps, by = list(Hour = funnel$hour), FUN = mean)
+  
+  # Optimize the data for this kind of plots using reshape2 library
   melted_totals <- melt(avg_by_hour_value, id = "Hour", variable.name = "Step", stat="identity")
+  
+  # Plot
   ggplot(melted_totals, aes(x = Hour, y = value)) + 
     geom_bar(stat="identity", fill="#733ca6") +
     ylab(label="Avg.") + 
     xlab("Hour") +
     ggtitle(title) +
     stat_smooth(color = "#faa030", se=FALSE) + 
-    theme(plot.title = element_text(size=24, face="bold"))
+    theme(plot.title = element_text(size=18, face="bold"))
 }
 
-avg_by_hour("Avg. Payments by Hour", funnel$payment_started)
+avg_by_hour("Avg. Payments by Hour", funnel$payment_finished)
