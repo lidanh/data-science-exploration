@@ -1,7 +1,11 @@
 # Funnel Analysis
+Lidan Hifi  
+2 April 2016  
+
+
 In this report we will analyze the funnel of a SaaS product which enables the users to send payment requests to their users, and get paid online and offline.
 
-***Conversion funnel*** is a phrase used in e-commerce to describe the journey a consumer takes through an Internet advertising or search system, navigating an e-commerce website and finally converting to a sale. The metaphor of a funnel is used to describe the decrease in numbers that occurs at each step of the process. [Wikipedia]*
+***Conversion funnel*** is a phrase used in e-commerce to describe the journey a consumer takes through an Internet advertising or search system, navigating an e-commerce website and finally converting to a sale. The metaphor of a funnel is used to describe the decrease in numbers that occurs at each step of the process. [Wikipedia]
 
 ### Funnel Steps
 1. Create payment request.
