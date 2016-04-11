@@ -242,7 +242,7 @@ avg_by_hour <- function(title, steps) {
 **Users funnel**: How many payment requests are created successfully every hour, in average?
 
 ```r
-avg_by_hour("Avg. New Items by Hour", funnel$new_items)
+avg_by_hour("Avg. New Items per Hour", funnel$new_items)
 ```
 
 ![](Funnel_Analysis_files/figure-html/unnamed-chunk-14-1.png)
@@ -250,7 +250,7 @@ avg_by_hour("Avg. New Items by Hour", funnel$new_items)
 **Users of users funnel:** How many payments, in average, are finished successfully every hour of the day?
 
 ```r
-avg_by_hour("Avg. Payments by Hour", funnel$payment_finished)
+avg_by_hour("Avg. Payments per Hour", funnel$payment_finished)
 ```
 
 ![](Funnel_Analysis_files/figure-html/unnamed-chunk-15-1.png)

@@ -186,12 +186,12 @@ avg_by_hour <- function(title, steps) {
 
 **Users funnel**: How many payment requests are created successfully every hour, in average?
 ```{r}
-avg_by_hour("Avg. New Items by Hour", funnel$new_items)
+avg_by_hour("Avg. New Items per Hour", funnel$new_items)
 ```
 
 **Users of users funnel:** How many payments, in average, are finished successfully every hour of the day?
 ```{r}
-avg_by_hour("Avg. Payments by Hour", funnel$payment_finished)
+avg_by_hour("Avg. Payments per Hour", funnel$payment_finished)
 ```
 
 Based on those graphs and the trendlines we can conclude that the hottest time is around the evening (5pm-6pm), while the lowest-traffic time is around the morning (5am-7am).
