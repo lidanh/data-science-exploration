@@ -9,7 +9,6 @@
 <meta name="generator" content="pandoc" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<meta name="author" content="Lidan Hifi" />
 
 
 <title>Funnel Analysis</title>
@@ -109,8 +108,6 @@ $(document).ready(function () {
 
 
 <h1 class="title">Funnel Analysis</h1>
-<h4 class="author"><em>Lidan Hifi</em></h4>
-<h4 class="date"><em>2 April 2016</em></h4>
 
 </div>
 
@@ -204,7 +201,7 @@ if (file.exists(datasetFile)) {
 </div>
 <div id="step-3-visualizing-the-funnel" class="section level3">
 <h3>Step 3: Visualizing the Funnel</h3>
-<p>How does this product’s funnel behaves over time?</p>
+<p>How does this product’s funnel behave over time?</p>
 <p>We have two main flows: <strong>user flow</strong> (create request and send it to a customer) and <strong>user of user</strong> flow (making a payment, either online or offline). Using the following function, we will visualize both of those flows of the funnel over time. For simplicity we will aggregate the data by day instead of hour using <code>sum</code> function.</p>
 <pre class="r"><code>visualize_funnel &lt;- function(title, steps) {
   # Aggregate the data per day instead of per hour for better visualization.

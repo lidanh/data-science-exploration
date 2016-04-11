@@ -1,6 +1,4 @@
 # Funnel Analysis
-Lidan Hifi  
-2 April 2016  
 
 
 In this report we will analyze the funnel of a SaaS product which enables the users to send payment requests to their users, and get paid online and offline.
@@ -123,7 +121,7 @@ From this graph we can see that there are considerably less payments than create
 We can also see that the range of the new items is very similar to sent items, which means that this step's conversion looks good, and we will explore it deeper later in this report.
 
 ### Step 3: Visualizing the Funnel
-How does this product's funnel behaves over time?
+How does this product's funnel behave over time?
 
 We have two main flows: **user flow** (create request and send it to a customer) and **user of user** flow (making a payment, either online or offline).
 Using the following function, we will visualize both of those flows of the funnel over time.
